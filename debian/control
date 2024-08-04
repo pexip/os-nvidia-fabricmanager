@@ -1,0 +1,32 @@
+Source: nvidia-fabricmanager
+Section: utils
+Priority: optional
+Maintainer: Pexip AS <packaging@pexip.com>
+Build-Depends: debhelper-compat (= 13),
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
+Homepage: https://developer.download.nvidia.com/compute/nvidia-driver/redist/fabricmanager/linux-x86_64
+
+Package: nvidia-fabricmanager
+Architecture: amd64
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: NVidia fabricmanager
+ Fabricmanager is needed to configure NVswitch on certain nvidia GPUs
+ .
+ This package contains the fabricmanager daemon
+
+Package: libnvfm1
+Architecture: amd64
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: NVidia fabricmanager - shared library
+ Fabricmanager is needed to configure NVswitch on certain nvidia GPUs
+ .
+ This package contains the NVFM shared library
+
+Package: libnvfm-dev
+Architecture: amd64
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: NVidia fabricmanager - development files
+ Fabricmanager is needed to configure NVswitch on certain nvidia GPUs
+ .
+ This package contains development files for the NVFM shared library

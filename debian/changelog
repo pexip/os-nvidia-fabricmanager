@@ -1,0 +1,5 @@
+nvidia-fabricmanager (525.147.05-1+pexip24u1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Sun, 04 Aug 2024 18:25:30 +0100

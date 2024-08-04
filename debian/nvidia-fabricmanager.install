@@ -1,0 +1,4 @@
+bin/* /usr/bin/
+etc/fabricmanager.cfg /usr/share/nvidia/nvswitch/
+share/nvidia/nvswitch/* /usr/share/nvidia/nvswitch/
+systemd/nvidia-fabricmanager.service /lib/systemd/system/
