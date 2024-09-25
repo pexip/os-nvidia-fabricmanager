@@ -1,3 +1,12 @@
+nvidia-fabricmanager (525.147.05-1+pexip24u3) pexip; urgency=medium
+
+  * Ignore failures on ExecStart because we have to run this on H100
+    but not all H100s and there is no way that we can figure out of
+    telling which is which.  On the systems where we do not have to start
+    it, it helpfully exits with 1 with the message "NOTHING_TO_DO".
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Wed, 25 Sep 2024 14:20:16 +0100
+
 nvidia-fabricmanager (525.147.05-1+pexip24u2) pexip; urgency=medium
 
   * Do not enable service by default.
