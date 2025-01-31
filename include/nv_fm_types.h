@@ -16,10 +16,15 @@
 extern "C" {
 #endif
 
+/** @defgroup FMAPI_Common Common Structures
+ *   
+ *  This chapter describes the common structures for Fabric Manager API interface library.
+ *  @{
+ */
+
 /** 
  * Return values for Fabric Manager API calls. 
  */
-
 typedef enum fmReturn_enum
 {
     FM_ST_SUCCESS                        =  0,  //!< The operation was successful
@@ -56,8 +61,6 @@ typedef void *fmHandle_t;   //!< Identifier for Fabric Manager API interface Han
  * Creates a unique version number for each struct
  */
 #define MAKE_FM_PARAM_VERSION(typeName,ver) (unsigned int)(sizeof(typeName) | ((ver)<<24))
-
-typedef unsigned int fm_connection_id_t;
 
 /**
  * Default port number used by  FM interface library to exchange commands to FM instance
@@ -164,8 +167,11 @@ typedef struct
     fmFabricPartitionInfo_t partitionInfo[FM_MAX_FABRIC_PARTITIONS];    //!< detailed meta data of each partitions
 } fmFabricPartitionList_v2;
 
+/// Typedef for \ref fmFabricPartitionList_v2
 typedef fmFabricPartitionList_v2 fmFabricPartitionList_t;
+/// Version 1 for \ref fmFabricPartitionList_v2
 #define fmFabricPartitionList_version2 MAKE_FM_PARAM_VERSION(fmFabricPartitionList_v2, 1)
+/// Latest version for \ref fmFabricPartitionList_v2
 #define fmFabricPartitionList_version fmFabricPartitionList_version2
 
 /**
@@ -178,8 +184,11 @@ typedef struct
     fmFabricPartitionId_t partitionIds[FM_MAX_FABRIC_PARTITIONS]; //!< partitions that are already activated
 } fmActivatedFabricPartitionList_v1;
 
+/// Typedef for \ref fmActivatedFabricPartitionList_v1
 typedef fmActivatedFabricPartitionList_v1 fmActivatedFabricPartitionList_t;
+/// Version 1 for \ref fmActivatedFabricPartitionList_v1
 #define fmActivatedFabricPartitionList_version1 MAKE_FM_PARAM_VERSION(fmActivatedFabricPartitionList_v1, 1)
+/// Latest version for \ref fmActivatedFabricPartitionList_v1
 #define fmActivatedFabricPartitionList_version fmActivatedFabricPartitionList_version1
 
 /**
@@ -205,8 +214,11 @@ typedef struct
     fmNvlinkFailedDeviceInfo_t  switchInfo[FM_MAX_NUM_NVSWITCHES];//!< list of NVSwitch with failed NVLinks
 } fmNvlinkFailedDevices_v1;
 
+/// Typedef for \ref fmNvlinkFailedDevices_v1
 typedef fmNvlinkFailedDevices_v1 fmNvlinkFailedDevices_t;
+/// Version 1 for \ref fmNvlinkFailedDevices_v1
 #define fmNvlinkFailedDevices_version1 MAKE_FM_PARAM_VERSION(fmNvlinkFailedDevices_v1, 1)
+/// Latest version for \ref fmNvlinkFailedDevices_v1
 #define fmNvlinkFailedDevices_version fmNvlinkFailedDevices_version1
 
 /**
@@ -230,10 +242,14 @@ typedef struct
                                                                                       unsupported partition*/
 } fmUnsupportedFabricPartitionList_v1;
 
+/// Typedef for \ref fmUnsupportedFabricPartitionList_v1
 typedef fmUnsupportedFabricPartitionList_v1 fmUnsupportedFabricPartitionList_t;
+/// Version 1 for \ref fmUnsupportedFabricPartitionList_v1
 #define fmUnsupportedFabricPartitionList_version1 MAKE_FM_PARAM_VERSION(fmUnsupportedFabricPartitionList_v1, 1)
+/// Latest version for \ref fmUnsupportedFabricPartitionList_v1
 #define fmUnsupportedFabricPartitionList_version fmUnsupportedFabricPartitionList_version1
 
+/** @} */ // Closing for FMAPI_Common Common Structures
 #ifdef __cplusplus
 }
 #endif
