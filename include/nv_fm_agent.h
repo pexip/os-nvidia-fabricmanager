@@ -61,7 +61,7 @@ fmReturn_t FM_LIB_API fmLibShutdown(void);
  *                           fill the socket path in addressInfo member and set addressIsUnixSocket flag.
  *
  *                           For additional connection parameters. See \ref fmConnectParams_t for details.
- * @param pfmHandle     OUT : Fabric Manager API interface abstracted handle for subsequent API calls.
+ * @param pFmHandle     OUT : Fabric Manager API interface abstracted handle for subsequent API calls.
  *
  * @return
  *         - \ref FM_ST_SUCCESS                successfully connected to the FM instance
@@ -217,7 +217,7 @@ fmReturn_t FM_LIB_API fmGetNvlinkFailedDevices(fmHandle_t pFmHandle, fmNvlinkFai
  *
  * @param pFmHandle IN:  Handle that came form \ref fmConnect
  *
- * @param pFmFabricPartition  OUT: List of unsupported fabric partitions on the system.
+ * @param pFmUnupportedFabricPartition  OUT: List of unsupported fabric partitions on the system.
  *
  * @return
  *         - \ref FM_ST_SUCCESS             successfully queried the list of unsupported partitions
@@ -226,10 +226,10 @@ fmReturn_t FM_LIB_API fmGetNvlinkFailedDevices(fmHandle_t pFmHandle, fmNvlinkFai
  *         - \ref FM_ST_GENERIC_ERROR       if an unspecified internal error occurred
  *         - \ref FM_ST_NOT_SUPPORTED       requested feature is not supported or enabled
  *         - \ref FM_ST_NOT_CONFIGURED      Fabric Manager instance is initializing and no data
- *         - \ref FM_ST_VERSION_MISMATCH    if the expected and provided versions of pFmFabricPartition do not match
+ *         - \ref FM_ST_VERSION_MISMATCH    if the expected and provided versions of pFmUnupportedFabricPartition do not match
  */
 fmReturn_t FM_LIB_API fmGetUnsupportedFabricPartitions(fmHandle_t pFmHandle,
-                                                    fmUnsupportedFabricPartitionList_t *pFmUnupportedFabricPartition);
+                                                       fmUnsupportedFabricPartitionList_t *pFmUnupportedFabricPartition);
 /** @} */ // Closing for FMAPI_FabricPartition
 #ifdef __cplusplus
 }
