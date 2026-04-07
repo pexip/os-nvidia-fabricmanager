@@ -1,3 +1,12 @@
+Allow starting fabricmanager to fail.
+
+We do this because there are certain classes of graphics cards (e.g. A100)
+where some variants need the fabricmanager and some do not.  It is not trivial
+to detect which is which, and the fabricmanager exits with status code 1 if it
+is not needed (instead of just cleanly exiting 0).  We therefore have to accept
+just trying to use it and allowing it to fail in cases where it is not
+necessary.
+
 Index: os-nvidia-fabricmanager/systemd/nvidia-fabricmanager.service
 ===================================================================
 --- os-nvidia-fabricmanager.orig/systemd/nvidia-fabricmanager.service
