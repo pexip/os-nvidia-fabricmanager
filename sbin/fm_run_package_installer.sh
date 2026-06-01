@@ -31,14 +31,25 @@ cp ${PWD}/nvidia-fabricmanager.service  /lib/systemd/system
 
 mkdir /usr/share/nvidia  > /dev/null 2>&1
 mkdir /usr/share/nvidia/nvswitch/  > /dev/null 2>&1
-cp ${PWD}/dgx2_hgx2_topology    /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgx2_hgx2_topology          /usr/share/nvidia/nvswitch/
 cp ${PWD}/dgxa100_hgxa100_topology    /usr/share/nvidia/nvswitch/
 cp ${PWD}/dgxh100_hgxh100_topology    /usr/share/nvidia/nvswitch/
 cp ${PWD}/dgxh800_hgxh800_topology    /usr/share/nvidia/nvswitch/
-cp ${PWD}/fabricmanager.cfg  /usr/share/nvidia/nvswitch/
+cp ${PWD}/fabricmanager.cfg           /usr/share/nvidia/nvswitch/
+cp ${PWD}/nv_fm_agent.h               /usr/include
+cp ${PWD}/nv_fm_types.h               /usr/include
 
-cp ${PWD}/nv_fm_agent.h     /usr/include
-cp ${PWD}/nv_fm_types.h     /usr/include
+# List of FM multi-node specific topology files
+cp ${PWD}/dgxgh200_hgxgh200_8gpus_topology /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgxgh200_hgxgh200_16gpus_topology /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgxgh200_hgxgh200_16gpus_trunk_connections.csv /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgxgh200_hgxgh200_16gpus_osfp_connections.csv /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgxgh200_hgxgh200_16gpus_osfp_cable_connections.csv /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgxgh200_hgxgh200_32gpus_topology /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgxgh200_hgxgh200_32gpus_trunk_connections.csv /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgxgh200_hgxgh200_32gpus_osfp_connections.csv /usr/share/nvidia/nvswitch/
+cp ${PWD}/dgxgh200_hgxgh200_32gpus_osfp_cable_connections.csv /usr/share/nvidia/nvswitch/
+cp ${PWD}/gh200_nvlink_32gpus_topology /usr/share/nvidia/nvswitch/
 
 mkdir /usr/share/doc/nvidia-fabricmanager > /dev/null 2>&1
 cp ${PWD}/LICENSE  /usr/share/doc/nvidia-fabricmanager
