@@ -1,3 +1,9 @@
+nvidia-fabricmanager (550.163.01-1+pexip25u1) pexip-trixie; urgency=medium
+
+  * Update for version of drivers in trixie
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Mon, 01 Jun 2026 11:47:16 +0100
+
 nvidia-fabricmanager (535.247.01-1+pexip25u2) pexip-trixie; urgency=medium
 
   * Trixie build for product distribution
