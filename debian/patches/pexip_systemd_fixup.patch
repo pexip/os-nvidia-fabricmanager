@@ -7,13 +7,13 @@ is not needed (instead of just cleanly exiting 0).  We therefore have to accept
 just trying to use it and allowing it to fail in cases where it is not
 necessary.
 
-Index: os-nvidia-fabricmanager/systemd/nvidia-fabricmanager.service
+Index: nvidia-fabricmanager/systemd/nvidia-fabricmanager.service
 ===================================================================
---- os-nvidia-fabricmanager.orig/systemd/nvidia-fabricmanager.service
-+++ os-nvidia-fabricmanager/systemd/nvidia-fabricmanager.service
+--- nvidia-fabricmanager.orig/systemd/nvidia-fabricmanager.service
++++ nvidia-fabricmanager/systemd/nvidia-fabricmanager.service
 @@ -9,7 +9,7 @@ PrivateTmp=false
  Type=forking
- TimeoutStartSec=240
+ TimeoutStartSec=720
  
 -ExecStart=/usr/bin/nv-fabricmanager -c /usr/share/nvidia/nvswitch/fabricmanager.cfg
 +ExecStart=-/usr/bin/nv-fabricmanager -c /usr/share/nvidia/nvswitch/fabricmanager.cfg
